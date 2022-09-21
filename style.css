@@ -1,0 +1,484 @@
+/* general styles */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #082655;
+}
+
+section {
+  position: relative;
+  max-width: 920px;
+  border-radius: 23px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* intro section*/
+
+h1 {
+  font-size: 34px;
+
+}
+
+p {
+  line-height: 37px;
+}
+
+ul {
+  margin-left: 37%;
+  text-align: left;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+button {
+  display: block;
+  margin: 15px auto;
+  font-weight: bolder;
+  /* box-shadow: 0px 0px 10px rgb(0 0 0 / 25%);*/
+}
+
+#button1 {
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #67D8AF;
+  font-size: 18px;
+  color: #F5F7F9;
+}
+
+i {
+  font-size: 12px;
+}
+
+#button2 {
+  width: 200px;
+  height: 35px;
+  margin-bottom: 1px;
+  border-radius: 25px;
+  background-color: #DFE6EA;
+  font-size: 13px;
+}
+
+/*months colors*/
+
+#jan {
+  background-color: #D2BBFD;
+  margin-top: 20px;
+}
+
+#febr {
+  background-color: #DCC7FD;
+}
+
+#marc {
+  background-color: #FF9DBE;
+}
+
+#apr {
+  background-color: #F9B2CA;
+}
+
+#may {
+  background-color: #FFCCDA;
+}
+
+#june {
+  background-color: #FFD29F;
+}
+
+#july {
+  background-color: #FFE2C1;
+}
+
+#aug {
+  background-color: #FFEBD5;
+}
+
+#sept {
+  background-color: #3DC5BA;
+}
+
+#oct {
+  background-color: #83E8E2;
+}
+
+#nov {
+  background-color: #C9F9FD;
+}
+
+#dec {
+  background-color: #B2A1F1;
+}
+
+/*cards*/
+
+time {
+  display: block;
+}
+.card {
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  border-radius: 13px;
+  font-size: 21px;
+  background-color: #F5F7F9 ;
+  text-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: transform 0.8s ease-out;
+  cursor: pointer;
+}
+
+.mouse-on {
+  background-color: #FF9DBE;
+  transform: rotate(360deg);
+  transition: transform 0.8s ease-out;
+  cursor: pointer;
+}
+
+.clicked {
+  background-color: #3DC5BA;
+}
+
+/* .card:hover {
+  background-color: #E7E7E7;
+  cursor: pointer;
+  box-shadow: 4px 5px 11px rgb(0 0 0 / 50%);
+} */
+
+.card time:nth-child(1) {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.card time:nth-child(2) {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.card time:nth-child(3) {
+  font-size: 37px;
+  font-weight: 600;
+  line-height: 55px;
+  transition: font-size 0.3s;
+}
+
+
+/* Flex layout: 5 months (jan-may) */
+
+#jan,
+#febr, 
+#marc,
+#apr, 
+#may {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-evenly;
+  gap: 10px 10px;
+  padding: 10px;
+}
+
+#jan::before {
+  content: "";
+  width: 640px;
+  height: 120px;
+}
+
+#febr::before,
+#marc::before {
+  content: "";
+  width: 120px;
+  height: 120px;
+}
+
+#apr::before {
+  content: "";
+  width: 510px;
+  height: 120px;
+}
+
+#may::before {
+  content: "";
+  width: 770px;
+  height: 120px;
+}
+
+/* grid layout:  june - nov */
+
+#june,
+#july,
+#aug,
+#sept,
+#oct,
+#nov {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+#june::before {
+  content: "";
+  grid-column: span 2;
+}
+
+#july::before {
+  content: "";
+  grid-column: span 4;
+}
+
+#sept::before {
+  content: "";
+  grid-column: span 3;
+}
+
+#oct::before {
+  content: "";
+  grid-column: span 5;
+}
+
+#nov::before {
+  content: "";
+  grid-column: span 1;
+}
+
+/* inline-block layout: dec */
+
+#dec {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#dec .card {
+  display: inline-block;
+  margin: 5px 3px;
+}
+
+#dec::before {
+  content: "";
+  display: inline-block;
+  width: 386px;
+  height: 90px;
+}
+
+#dec::after {
+  content: "";
+  display: inline-block;
+  width: 125px;
+  height: 90px;
+}
+
+/*media queries: 0-600px, 601-959px, 960px + */
+
+/* Desktop  */
+@media screen and (min-width: 960px){
+  /* style provided so far will be valid */
+
+  /* .card:hover time:nth-child(3) {
+    font-size: 50px;
+    line-height: 46px;
+    transition: font-size 0.3s;
+  } */
+
+}
+
+/* tablet */
+@media screen and (max-width: 959px){
+  section {
+    width: 570px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border-radius: 11px;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 23px;
+  }
+
+  ul {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .card {
+    width: 70px;
+    height: 70px;
+    padding: 2px;
+    border-radius: 7px;
+    box-shadow: 1px 1px 5px 0px rgb(0 0 0 / 28%);
+  }
+  
+  .card time:nth-child(1) {
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  .card time:nth-child(2) {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 10px;
+  }
+  
+  .card time:nth-child(3) {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 34px;
+  }
+  
+  #jan::before {
+    width: 390px; 
+    height: 70px;
+  }
+
+  #febr::before,
+  #marc::before {
+    width: 70px;
+    height: 70px;
+  }
+
+  #apr::before {
+    width: 310px;
+    height: 70px;
+  }
+
+  #may::before {
+    width: 470px;
+    height: 70px;
+  }
+
+  #dec::before {
+    width: 234px;
+    height: 60px;
+  }
+
+  #dec::after {
+    width: 76px;
+    height: 60px;
+  }
+
+}
+
+/* mobile*/ 
+@media screen and (max-width: 600px){
+  #root section {
+    width: 360px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding: 8px;
+    border-radius: 13px;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 12px;
+    line-height: 23px;
+  }
+
+  ul {
+    margin-left: 29%;
+    font-size: 10px;
+  }
+  button {
+    margin: 8px auto;
+  }
+  #button1 {
+    width: 250px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  #button2 {
+    width: 170px;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  i {
+    font-size: 10px;
+  }
+
+  #jan, #febr, #marc, #apr, #may{
+    gap: 6px 6px;
+
+  }
+
+  #june, #july, #aug, #sept, #oct, #nov {
+    grid-gap: 6px;
+  }
+
+  .card {
+    width: 44px;
+    height: 44px;
+    padding: 2px;
+    border-radius: 5px;
+    box-shadow: 0.5px 1px 3px 0px rgb(0 0 0 / 28%);
+  }
+  
+  .card time:nth-child(1) {
+    font-size: 6px;
+    line-height: 8px;
+    font-weight: 600;
+  }
+
+  .card time:nth-child(2) {
+    font-size: 7px;
+    font-weight: 400;
+    line-height: 9px;
+  }
+  
+  .card time:nth-child(3) {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+  }
+  
+  #jan::before {
+    width: 244px; 
+    height: 44px;
+  }
+
+  #febr::before,
+  #marc::before {
+    width: 44px;
+    height: 44px;
+  }
+
+  #apr::before {
+    width: 194px;
+    height: 44px;
+  }
+
+  #may::before {
+    width: 294px;
+    height: 44px;
+  }
+
+  #dec::before {
+    width: 147px;
+    height: 34px;
+  }
+
+  #dec::after {
+    width: 46px;
+    height: 32px;
+  }
+
+  #root #dec {
+    padding: 4px 0;
+  }
+
+  #dec .card {
+    margin: 3px 1px;
+  }
+}
+  
